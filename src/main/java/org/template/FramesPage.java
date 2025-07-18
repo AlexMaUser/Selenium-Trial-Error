@@ -6,6 +6,7 @@ public class FramesPage extends Alerts_Frames_WindowsPage {
     private By textInFrame = By.id("sampleHeading");
     private String iFrameBigBox = "frame1";
     private By header = By.xpath("//div[@id='framesWrapper']//h1[text()='Frames']");
+    private By iFrameSmallBox = By.xpath("//div[@id='frame2Wrapper']//iframe[@id='frame2']");
 
     public String getHeaderFramesText() {
         return find(header).getText();
@@ -17,7 +18,8 @@ public class FramesPage extends Alerts_Frames_WindowsPage {
     }
 
     private void switchToSmallBox() {
-        SwitchToUtility.switchToFrameIndex(2);
+//        SwitchToUtility.switchToFrameIndex(1);
+        SwitchToUtility.switchToFrameElement(find(iFrameSmallBox));
     }
 
     public String getTextInBigFrame() {
